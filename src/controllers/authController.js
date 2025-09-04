@@ -16,9 +16,9 @@ class AuthController {
   //Registrar novo usuário
   async register(req, res) {
     try {
-      const { name, nickname, email, password } = req.body;
+      const { name,email, password } = req.body;
       //Validação básica
-      if (!name || !nickname || !email || !password) {
+      if (!name || !email || !password) {
         return res
           .status(400)
           .json({ error: "Todos os campos são obrigatórios!" });
@@ -30,19 +30,12 @@ class AuthController {
         return res.status(400).json({ error: "Email já em uso!" });
       }
 
-      //Verifica se o nickname já existe
-       const userNicknameExists = await userModel.findByNickname(nickname);
-       if (userNicknameExists) {
-         return res.status(400).json({ error: "Nickname já em uso!" });
-       }
-
       //HASH da senha
       const hashedPassword = await bcrypt.hash(password, 10);
 
       //Cria o objeto usuário
       const data = {
         name,
-        nickname,
         email,
         password: hashedPassword,
       };
@@ -83,9 +76,9 @@ class AuthController {
 
       //Gera o token JWT
       const token = jwt.sign(
-        { id: userExists.id, name: userExists.name,nickname: userExists.nickname, email: userExists.email },
+        { id: userExists.id, name: userExists.name, email: userExists.email },
         process.env.JWT_SECRET,
-        { expiresIn: "1d" } // O token expira em 1 dia
+        { expiresIn: "100d" } // O token expira em 1 dia
       );
 
       return res.json({
