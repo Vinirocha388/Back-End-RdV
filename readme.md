@@ -76,7 +76,7 @@ yarn dev
 ```
 
 
-O servidor estará rodando em `http://localhost:3000`
+O servidor estará rodando em `http://localhost:4000`
 
 ## 📚 Documentação da API
 
@@ -84,10 +84,42 @@ O servidor estará rodando em `http://localhost:3000`
 
 ### Exemplo de Uso
 
+Método GET `http://localhost:4000/recipes
+
+
+#### Criar uma nova receita
+
+Método **POST** `http://localhost:4000/recipes`
+
+Exemplo de corpo da requisição:
+```json
+
+```
+
+---
+
+#### Atualizar uma receita existente
+
+Método **PUT** `http://localhost:4000/recipes/:id`
+
+Exemplo de corpo da requisição:
 ```json
 {
-
+  "titulo": "Salada de Frutas",
+  "descricao": "Salada refrescante com frutas variadas",
+  "ingredientes": "Maçã, banana, laranja, uva",
+  "modoPreparo": "Corte as frutas e misture tudo",
+  "categoria": "Saudável",
+  "imagem": "https://images.unsplash.com/photo-1464306076886-deb9e8f1b7a5",
+  "usuarioId": 2
 }
+```
+
+---
+
+#### Deletar uma receita
+
+Método **DELETE** `http://localhost:4000/recipes/:id`
 ```
 
 ## 🤝 Contribuição

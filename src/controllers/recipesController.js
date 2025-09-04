@@ -28,8 +28,8 @@ export const getRecipeById = async (req, res) => {
 // Criar nova receita
 export const createRecipe = async (req, res) => {
     try {
-        const { titulo, descricao, ingredientes, modoPreparo, usuarioId } = req.body;
-        const novaReceita = await RecipesModel.create({ titulo, descricao, ingredientes, modoPreparo, usuarioId });
+        const { titulo, descricao, ingredientes, modoPreparo, categoria, usuarioId } = req.body;
+        const novaReceita = await RecipesModel.create({ titulo, descricao, ingredientes, modoPreparo, categoria, usuarioId });
         res.status(201).json(novaReceita);
     } catch (error) {
         res.status(500).json({ error: 'Erro ao criar receita' });
@@ -40,8 +40,8 @@ export const createRecipe = async (req, res) => {
 export const updateRecipe = async (req, res) => {
     try {
         const id = parseInt(req.params.id, 10);
-        const { titulo, descricao, ingredientes, modoPreparo } = req.body;
-        const receitaAtualizada = await RecipesModel.update(id, { titulo, descricao, ingredientes, modoPreparo });
+        const { titulo, descricao, ingredientes, modoPreparo, categoria } = req.body;
+        const receitaAtualizada = await RecipesModel.update(id, { titulo, descricao, ingredientes, modoPreparo, categoria });
         res.json(receitaAtualizada);
     } catch (error) {
         res.status(500).json({ error: 'Erro ao atualizar receita' });

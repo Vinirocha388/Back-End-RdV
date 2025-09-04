@@ -24,10 +24,12 @@ model Usuario {
 
 model Receitas {
   id            Int      @id @default(autoincrement())
+  imagem        String
   titulo        String
   descricao     String
   ingredientes  String
   modoPreparo   String
+  categoria     String
   dataCriacao   DateTime @default(now())
   usuarioId     Int
   usuario       Usuario  @relation(fields: [usuarioId], references: [id])
