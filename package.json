@@ -1,5 +1,5 @@
 {
-  "name": "teste",
+  "name": "back-end-rdv",
   "version": "1.0.0",
   "description": "",
   "license": "MIT",
@@ -8,8 +8,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.js",
-    "prisma:seed":"node prisma/seed/seed.js"
+    "dev": "nodemon src/server.js"
   },
   
 "prisma": {

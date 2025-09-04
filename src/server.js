@@ -9,5 +9,5 @@ const port = process.env.PORT || 4001;
 app.use(express.json());
 app.use("/", router);
 app.listen(port, () => {
-  console.log(`Servidor rodando na porta: ${port}`);
+  console.log(`Panela no fogo queimando ♨️ a todo vapor na porta: ${port}`);
 });
