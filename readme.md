@@ -93,17 +93,6 @@ Método **POST** `http://localhost:4000/recipes`
 
 Exemplo de corpo da requisição:
 ```json
-
-```
-
----
-
-#### Atualizar uma receita existente
-
-Método **PUT** `http://localhost:4000/recipes/:id`
-
-Exemplo de corpo da requisição:
-```json
 {
   "titulo": "Salada de Frutas",
   "descricao": "Salada refrescante com frutas variadas",
@@ -117,10 +106,28 @@ Exemplo de corpo da requisição:
 
 ---
 
+#### Atualizar uma receita existente
+
+Método **PUT** `http://localhost:4000/recipes/:id`
+
+Exemplo de corpo da requisição:
+```json
+{
+"titulo": "Bolo de Fubá",
+"descricao": "Bolo tradicional feito com fubá, perfeito para o café da tarde",
+"ingredientes": "Fubá, ovos, leite, açúcar, fermento",
+"modoPreparo": "Misture todos os ingredientes e asse em forno médio por 40   minutos",
+"categoria": "Doce",
+"imagem": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+}
+```
+
+---
+
 #### Deletar uma receita
 
 Método **DELETE** `http://localhost:4000/recipes/:id`
-```
+
 
 ## 🤝 Contribuição
 
