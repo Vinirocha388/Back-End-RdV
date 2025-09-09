@@ -48,7 +48,7 @@ yarn install
 Crie um arquivo `.env` na raiz do projeto:
 ```env
 # Configurações do servidor
-PORT=3000
+PORT=4000
 
 # JWT
 JWT_SECRET=seu_jwt_secret_muito_seguro
