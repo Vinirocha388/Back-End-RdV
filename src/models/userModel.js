@@ -2,13 +2,13 @@ import prisma from '../../prisma/client.js';
 
 class UserModel {
 async findAll() {
-    const users = await prisma.user.findMany();
+  const users = await prisma.usuario.findMany();
 
     return users;
   }
 
 async findById(id) {
-    const user = await prisma.user.findUnique({
+  const user = await prisma.usuario.findUnique({
       where: {
         id: Number(id)
       }
@@ -19,7 +19,7 @@ async findById(id) {
 
   //obter um usuario pelo email
     async findByEmail(email) {
-        const user = await prisma.user.findUnique({
+  const user = await prisma.usuario.findUnique({
         where: {
             email: email
         }
@@ -29,7 +29,7 @@ async findById(id) {
     }
 
     async findByNickname(nickname) {
-      const user = await prisma.user.findUnique({
+  const user = await prisma.usuario.findUnique({
       where: {
           nickname,
       }

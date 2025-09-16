@@ -12,6 +12,6 @@ router.use("/auth", authRouter);
 router.use("/recipes", recipesRouter);
 
 // Rotas protegidas
-router.use(authMiddleware);
+// Exemplo: router.use('/admin', authMiddleware, adminRouter); // Adicione rotas protegidas aqui
 
 export default router;
