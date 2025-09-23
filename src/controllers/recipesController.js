@@ -30,8 +30,8 @@ export const getRecipeById = async (req, res) => {
 // Criar nova receita
 export const createRecipe = async (req, res) => {
     try {
-        const { titulo, descricao, ingredientes, modoPreparo, categoria, usuarioId } = req.body;
-        const novaReceita = await RecipesModel.create({ titulo, descricao, ingredientes, modoPreparo, categoria, usuarioId });
+        const { imagem, titulo, descricao, ingredientes, modoPreparo, categoria, usuarioId } = req.body;
+        const novaReceita = await RecipesModel.create({ imagem, titulo, descricao, ingredientes, modoPreparo, categoria, usuarioId });
         res.status(201).json(novaReceita);
     } catch (error) {
         res.status(500).json({ error: 'Erro ao criar receita' });
