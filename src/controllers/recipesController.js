@@ -7,6 +7,8 @@ export const getAllRecipes = async (req, res) => {
         const receitas = await RecipesModel.findAll();
         res.json(receitas);
     } catch (error) {
+        console.log(error);
+        
         res.status(500).json({ error: 'Erro ao buscar receitas' });
     }
 };

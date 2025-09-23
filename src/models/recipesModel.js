@@ -4,8 +4,8 @@ const prisma = new PrismaClient();
 
 class RecipesModel {
 
-    async findAll(filtro = {}) {
-        return await prisma.receitas.findMany({ where: filtro });
+    async findAll() {
+        return await prisma.receitas.findMany({});
     }
 
 
